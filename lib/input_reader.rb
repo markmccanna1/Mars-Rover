@@ -1,15 +1,12 @@
-module InputReader
+module LineParser
 
   extend self
 
-  def read_file(file)
-    lines = IO.readlines(file)
-    remove_newlines(lines)
-  end
+  def grid_size(line)
+    line.chomp!
+  end  
 
-  private
-  
-    def remove_newlines(lines)
-      lines.each(&:chomp!)
-    end
+  def remove_newlines(lines)
+    lines.each(&:chomp!)
+  end
 end

@@ -1,6 +1,6 @@
 class Rover
 
-  attr_reader :direction, :position, :instructions
+  attr_reader :direction, :position
   attr_accessor :instructions
 
   def initialize(args)
@@ -18,19 +18,10 @@ class Rover
   end
 
   def move
-    # puts "move direction"
-    # 
-    # p direction
-    puts "move self"
-    p self
     position.move_forward(direction)
   end
 
   def explore
-    # puts "explore direction"
-    puts "explore self"
-    p self
-    # dire = direction
     instructions.each do |instruction|
       case instruction
       when "L"
@@ -41,11 +32,16 @@ class Rover
         move
       end
     end
+    wipe_instructions
   end
 
-  # def to_s
-  #   "Direction: #{direction.inspect}\nPostion: #{position.inspect}"
-  # end
+  def wipe_instructions
+    @instructions = []
+  end
+
+  def to_s
+    "Direction: #{direction.name}\nPosition: X: #{position.x}, Y: #{position.y}"
+  end
 
 
 end

@@ -9,5 +9,10 @@ module RoverFactory
               instructions: instructions })
   end
 
+  private 
+    def instructions_conversion(instructions)
+      instructions.split('')
+    end
+
 
 end

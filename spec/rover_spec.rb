@@ -28,7 +28,7 @@ describe "Rover" do
   end
 
   describe '#turn_left' do
-    it 'sets its direction to the left' do
+    it 'sets the rovers direction to the left' do
       north.left_direction=("W")
       rover.turn_left
       expect(rover.direction).to eq("W")
@@ -36,45 +36,47 @@ describe "Rover" do
   end
 
   describe '#turn_right' do
-    it 'sets its direction to the right' do
+    it 'sets the rovers direction to the right' do
       north.right_direction=("E")
       rover.turn_right
       expect(rover.direction).to eq("E")
     end
   end
 
-  # describe '#move' do
-  #   it 'tells the position to change its position' do
-  #     expect(position).to receive(:move_forward)
-  #     rover.move
-  #   end 
-  # end
+  describe '#move' do
+    it 'tells the rover to move forward' do
+      expect(position).to receive(:move_forward)
+      rover.move
+    end 
+  end
 
   describe '#explore' do
 
     it 'follows its directions' do
-      # puts "rover position"
-      # p rover.position
-      # puts "rover.move"
-      # rover.move
-      # p rover.position
-      rover = Rover.new({ direction: north, position: position, instructions: "LRM"})
       north.left_direction=(west)
       north.right_direction=(east)
-      # p rover.direction
+      east.left_direction=(north)
+      west.right_direction=(north)
+      rover = Rover.new({ direction: north, position: position, instructions: "LRRLM"})
       rover.explore
-    #   # puts "spec direction"
-    #   # p rover
-      # rover.explore
-    #   # puts "hello"
-    #   # p rover.direction.x_inc
-    #   expect(rover.position.coordinates).to eq [0, 1]
+      expect(rover.position.coordinates).to eq [0, 1]
     end
 
-    # it 'should delete its instructions when it completes them' do
-    #   rover.explore
-    #   expect(rover.instructions).to eq nil
-    # end
+    it 'should remove its instructions when it completes them' do
+      north.left_direction=(west)
+      north.right_direction=(east)
+      east.left_direction=(north)
+      west.right_direction=(north)
+      expect(rover).to receive(:wipe_instructions)
+      rover.explore
+    end
+  end
+
+  describe '#wipe_instructions' do
+    it 'sets the instructions to an empty array' do
+      rover.wipe_instructions
+      expect(rover.instructions).to eq []
+    end
   end
 
 end

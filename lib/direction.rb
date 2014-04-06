@@ -9,8 +9,9 @@ class Direction
     @y_inc = y_incrementer
   end
 
-  # def to_s
-  #   "#{@name}"
-  # end
+  def set_directions(left, right)
+    @left_direction = left
+    @right_direction = right  
+  end
 
 end
