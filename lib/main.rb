@@ -1,7 +1,6 @@
 require_relative 'direction'
 require_relative 'line_parser'
 require_relative 'grid_factory'
-require_relative 'rover'
 require_relative 'position_factory'
 require_relative 'rover_factory'
 
