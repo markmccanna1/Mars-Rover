@@ -1,7 +1,6 @@
 require 'position'
 require 'direction'
 
-
 describe 'Position' do 
 
   let(:direction) { Direction.new("N", 0, 1) }
@@ -22,6 +21,4 @@ describe 'Position' do
     end
   end
 
-
-  
 end

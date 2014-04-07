@@ -1,6 +1,5 @@
 require 'grid_factory'
 
-
 describe "GridFactory" do 
 
   describe '#build_grid' do

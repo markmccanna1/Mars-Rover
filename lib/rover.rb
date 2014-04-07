@@ -43,6 +43,5 @@ class Rover
     "Direction: #{direction.name}\nPosition: X: #{position.x}, Y: #{position.y}"
   end
 
-
 end
 

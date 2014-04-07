@@ -1,6 +1,6 @@
 class Position
 
-  attr_accessor :x, :y
+  attr_reader :x, :y
 
   def initialize(args)
     @x = args.fetch(:x)

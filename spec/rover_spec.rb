@@ -55,19 +55,15 @@ describe "Rover" do
   describe '#explore' do
 
     it 'follows its directions' do
-      north.left_direction=(west)
-      north.right_direction=(east)
+      north.set_directions(west, east)
       east.left_direction=(north)
       west.right_direction=(north)
-      instructions = ["L", "R", "M"]
-      rover = Rover.new({ direction: north, position: position, instructions: instructions})
       rover.explore
       expect(rover.position.coordinates).to eq [0, 1]
     end
 
     it 'should remove its instructions when it completes them' do
-      north.left_direction=(west)
-      north.right_direction=(east)
+      north.set_directions(west, east)
       east.left_direction=(north)
       west.right_direction=(north)
       expect(rover).to receive(:wipe_instructions)

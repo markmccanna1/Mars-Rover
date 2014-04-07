@@ -9,5 +9,4 @@ module RoverFactory
               instructions: instructions.split('') })
   end
 
-
 end

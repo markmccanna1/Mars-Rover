@@ -18,4 +18,5 @@ module LineParser
   def instructions(line)
     line.chomp
   end
+  
 end

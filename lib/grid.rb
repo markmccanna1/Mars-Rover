@@ -12,5 +12,4 @@ class Grid
     applicaple[0]
   end
 
-
 end
