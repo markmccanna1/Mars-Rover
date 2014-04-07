@@ -42,7 +42,7 @@ The Grid object keeps track of the size of the plateau and also holds all the di
 
 The benefits of creating a direction object is that the rover can move in the traditional 4 directions (north, south, etc), but can also move in any direction a programmer wants, like southwest. The direction object also knows the x and y incrementers the rover should move in. The incrementers can have any value, which means the rover can travel in any direction to any degree. The incrementers mean that the directions don't just have a name, they have a mathematical idea of the way they point. 
 
-I have a Line Parser module that has the methods necessary to take a line from the input and make it usable for the the object factories. 
+I have a Line Parser module that has the methods necessary to take a line from the input and make it usable for the the object factories. The object factories deal with parsing the information passed to the them to finally create the objects.
 
 Steps for Improvement
 ==========
