@@ -6,7 +6,7 @@ class Rover
   def initialize(args)
     @direction = args.fetch(:direction)
     @position = args.fetch(:position)
-    @instructions = args.fetch(:instructions).split('')
+    @instructions = args.fetch(:instructions)
   end
 
   def turn_left

@@ -12,8 +12,6 @@ class Position
   end
 
   def move_forward(direction)
-    # puts "direction"
-    # p direction
     @x += direction.x_inc
     @y += direction.y_inc
   end

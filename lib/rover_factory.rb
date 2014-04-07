@@ -6,13 +6,8 @@ module RoverFactory
 
   def build(direction, position, instructions)
     Rover.new({ direction: direction, position: position, 
-              instructions: instructions })
+              instructions: instructions.split('') })
   end
-
-  private 
-    def instructions_conversion(instructions)
-      instructions.split('')
-    end
 
 
 end
