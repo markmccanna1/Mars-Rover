@@ -10,8 +10,6 @@ south = Direction.new("S", 0, -1)
 east = Direction.new("E", 1, 0)
 west = Direction.new("W", -1, 0)
 
-
-
 north.set_directions(west, east)
 south.set_directions(east, west)
 west.set_directions(south, north)
@@ -19,9 +17,7 @@ east.set_directions(north, south)
 
 directions = [north, south, east, west]
 
-
 file = File.open('../input')
-
 
 grid_size_line = file.readline
 
@@ -41,10 +37,8 @@ until file.eof?
   input_direction = LineParser.initial_direction(position_direction_line)
   direction = grid.find_direction(input_direction)
 
-
   instructions_line = file.readline
   instructions = LineParser.instructions(instructions_line)
-
 
   rover = RoverFactory.build(direction, position, instructions)
   

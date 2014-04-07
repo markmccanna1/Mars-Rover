@@ -11,6 +11,5 @@ describe "GridFactory" do
       expect(grid.size).to eq [5, 5]
     end
   end
-
-  
+ 
 end
