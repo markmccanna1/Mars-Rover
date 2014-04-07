@@ -12,8 +12,10 @@ describe "Rover" do
 
   let(:position) { Position.new( { x: 0, y: 0 } ) }
 
+  let(:instructions) { ["L", "R", "M"] }
+
   let(:rover) { Rover.new({ direction: north, position: position, 
-                            instructions: "LRM" }) }
+                            instructions: instructions }) }
 
   it 'has a current direction' do
     expect(rover.direction).to eq north
@@ -24,7 +26,7 @@ describe "Rover" do
   end
 
   it 'has instructions' do
-    expect(rover.instructions).to eq "LRM".split('')
+    expect(rover.instructions).to eq instructions
   end
 
   describe '#turn_left' do
@@ -57,7 +59,8 @@ describe "Rover" do
       north.right_direction=(east)
       east.left_direction=(north)
       west.right_direction=(north)
-      rover = Rover.new({ direction: north, position: position, instructions: "LRRLM"})
+      instructions = ["L", "R", "M"]
+      rover = Rover.new({ direction: north, position: position, instructions: instructions})
       rover.explore
       expect(rover.position.coordinates).to eq [0, 1]
     end
