@@ -27,4 +27,28 @@ Expected Output:
 Running the Program
 ==========
 
-sdfsdf
+You can run the program via the command line using the command "ruby main.rb." Make sure that you are in the lib directory, as opposed to the top level.
+
+If you want to run the tests you need to have rspec installed on your machine. 
+
+Design Choices
+==========
+
+The classes that make the backbone of the program are Rover, Position, Direction, and Grid. 
+
+Rovers are composed of two other objects a position object to keep track of their current position, and a direction object that keeps track of the direction they're facing. 
+
+The Grid object keeps track of the size of the plateau and also holds all the directions the rover can travel in.
+
+The benefits of creating a direction object is that the rover can move in the traditional 4 directions (north, south, etc), but can also move in any direction a programmer wants, like southwest. The direction object also knows the x and y incrementers the rover should move in. The incrementers can have any value, which means the rover can travel in any direction to any degree. The incrementers mean that the directions don't just have a name, they have a mathematical idea of the way they point. 
+
+Steps for Improvement
+==========
+
+Logical features that can improve the program: 
+
+Currently the rovers lack the human drive for self preservation and are not afraid to go cliff diving. To fix this the rover could message the grid to see whether there is an open area in front of them they can move to, if not they don't move.
+
+The rovers are also currently very good at the game of chicken, they don't care whether they hit each other by moving towards an occupied coordinate. The way the code is structured now, the second rover isn't instantiated until the first rover stops exploring. It would be helpful if both rovers were created at the same time, and they didn't run into each other. The solution to this would be similar to the one mentioned above, the rovers could message the grid to see if another rover is occupying the space in front of them, and move forward only if the space is empty. 
+
+
